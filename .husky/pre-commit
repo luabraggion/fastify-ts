@@ -1,0 +1,5 @@
+echo 'Check for listing errors and run testes before commiting...'
+yarn check || (echo 'Error: Linting errors or tests failed. Please fix them before commiting.' && exit 1)
+echo 'No linting errors found and tests passed. Proceeding with commit...'
+echo 'Done'
+

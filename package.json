@@ -1,0 +1,38 @@
+{
+  "name": "fastify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=24.1.0"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node index.js",
+    "prepare": "husky",
+    "check": "eslint . --ext .ts"
+  },
+  "keywords": [],
+  "author": "Luã Braggion",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "^9.28.0",
+    "@types/bcrypt": "^5.0.2",
+    "@types/node": "^22.15.30",
+    "eslint": "^9.28.0",
+    "globals": "^16.2.0",
+    "husky": "^9.1.7",
+    "prisma": "^6.9.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.34.0"
+  },
+  "dependencies": {
+    "@prisma/client": "6.9.0",
+    "bcrypt": "^6.0.0",
+    "fastify": "^5.3.3"
+  },
+  "packageManager": "yarn@4.9.2"
+}

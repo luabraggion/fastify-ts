@@ -12,12 +12,12 @@ interface AuthReply {
 }
 
 export async function authMiddleware(req: AuthRequest, reply: AuthReply) {
-  const apiEmail = req.headers["email"];
+  const apiEmail = req.headers['email'];
 
   if (!apiEmail) {
     return reply.status(401).send({
-      error: "Unauthorized",
-      message: "Email header is required for authentication",
+      error: 'Unauthorized',
+      message: 'Email header is required for authentication',
     });
   }
 }

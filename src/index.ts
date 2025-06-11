@@ -1,12 +1,13 @@
-import Fastify from "fastify";
-import { userRoutes } from "./routes/user.routes.js";
+import Fastify from 'fastify';
+
+import { userRoutes } from './routes/user.routes.js';
 
 const fastify = Fastify({
   logger: false,
 });
 
 fastify.register(userRoutes, {
-  prefix: "/api/v1/users",
+  prefix: '/api/v1/users',
 });
 
 const start = async () => {

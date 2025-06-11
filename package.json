@@ -1,19 +1,34 @@
 {
-  "name": "fastify",
+  "name": "fastify-ts-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Complete Fastify application with TypeScript, Prisma, and ESLint",
   "main": "index.js",
   "engines": {
     "node": ">=24.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luabraggion/fastify-ts"
   },
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc -p tsconfig.json",
     "start": "node index.js",
     "prepare": "husky",
-    "check": "eslint . --ext .ts"
+    "lint": "eslint --ignore-pattern './src/generated/**/*' ./src --ext .ts",
+    "lint:fix": "eslint --ignore-pattern './src/generated/**/*' ./src --ext .ts --fix",
+    "style:check": "prettier --check './src/**/*.ts'",
+    "style:fix": "prettier --write './src/**/*.ts'"
   },
-  "keywords": [],
+  "keywords": [
+    "node",
+    "fastify",
+    "typescript",
+    "prisma",
+    "bcrypt",
+    "eslint",
+    "prettier"
+  ],
   "author": "Luã Braggion",
   "license": "ISC",
   "type": "module",

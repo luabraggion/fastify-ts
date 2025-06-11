@@ -1,5 +1,5 @@
-import { User, UserCreate, UserModel } from "../interfaces/user.interface.js";
-import { UserModelProperties } from "../models/user.model.js";
+import { User, UserCreate, UserModel } from '../interfaces/user.interface.js';
+import { UserModelProperties } from '../models/user.model.js';
 
 class UserController {
   private userModel: UserModel;
@@ -18,7 +18,7 @@ class UserController {
   }: UserCreate): Promise<User> {
     const verifyIfUserExists = await this.userModel.findByEmail(email);
     if (verifyIfUserExists) {
-      throw new Error("Email already exists");
+      throw new Error('Email already exists');
     }
     const result = await this.userModel.create({
       email,
@@ -34,7 +34,7 @@ class UserController {
   async findByEmail(email: string): Promise<User | null> {
     const user = await this.userModel.findByEmail(email);
     if (!user) {
-      throw new Error("User not found");
+      throw new Error('User not found');
     }
     return user;
   }

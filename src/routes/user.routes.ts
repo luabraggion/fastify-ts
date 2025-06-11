@@ -1,9 +1,10 @@
-import { FastifyInstance } from "fastify";
-import { UserController } from "../controllers/user.controller.js";
-import { UserCreate, UserQuerystring } from "../interfaces/user.interface.js";
+import { FastifyInstance } from 'fastify';
+
+import { UserController } from '../controllers/user.controller.js';
+import { UserCreate } from '../interfaces/user.interface.js';
 export async function userRoutes(fastify: FastifyInstance) {
   const userController = new UserController();
-  fastify.post<{ Body: UserCreate }>("/", async (req, reply) => {
+  fastify.post<{ Body: UserCreate }>('/', async (req, reply) => {
     const { name, email, password, isActive, isAdmin, profilePictureUrl } =
       req.body;
 
@@ -19,9 +20,9 @@ export async function userRoutes(fastify: FastifyInstance) {
     return reply.status(201).send(data);
   });
 
-  fastify.get("/", async (req, reply) => {
+  fastify.get('/', async (req, reply) => {
     reply.send({
-      message: "List of users",
+      message: 'List of users',
     });
   });
 
@@ -41,7 +42,7 @@ export async function userRoutes(fastify: FastifyInstance) {
   //   return reply.send(user);
   // });
 
-  fastify.put<{ Params: { id: string } }>("/:id", async (req, reply) => {
+  fastify.put<{ Params: { id: string } }>('/:id', async (req, reply) => {
     const userId = req.params.id;
     const userData = req.body;
     reply.send({ userId, userData });
